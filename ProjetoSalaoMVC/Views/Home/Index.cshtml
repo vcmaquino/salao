@@ -1,0 +1,35 @@
+﻿
+@model ProjetoSalaoMVC.Models.ViewsModel.LoginViewModel
+@using (Html.BeginForm())
+{
+    <div style="position: relative; width: 200px; left: 45%;margin-top: 100px;">
+        <div>
+            <table>
+                <tr>
+                    <td><b>Usuario:</b></td>
+                    <td>
+                        @Html.TextBoxFor(m => m.usuario, new { maxlength = "20", size = "30" })
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Senha:</b></td>
+                    <td>
+                        @Html.TextBoxFor(m => m.senha, new { maxlength = "10", size = "30" })
+
+                    </td>
+
+            </table>
+            <div>
+                Seleciona tipo usuario:
+                @Html.DropDownListFor(model => model.tipoUsuario, Model.ActionsList, new { @class = "form-control" })
+            </div>
+        </div>
+        <div> <input type="submit" name="button" value="Enviar" class="btn btn-default" /></div>
+    </div>
+
+  
+}
+
+
+
